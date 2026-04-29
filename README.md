@@ -64,3 +64,10 @@ Longer-Term:
 - Character Abilities (e.g. Sprint, Dash, TP)
 - Add more enemies
 
+
+## Challenges
+
+The most challenging parts to me were:
+
+- Setting up a chart for the first time
+- Formatting things in HTML
