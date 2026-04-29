@@ -15,7 +15,7 @@ The Code can be split into a few different segments, as follows:
 
 ### Player Object
 
-The Player class holds all information partaining to the player character, such as Hitbox Size, Speed etc.
+The Player class holds all information partaining to the player character, such as hitbox size, speed etc.
 In addition, it includes a draw and an update function, to draw the chracater on screen and update its game logic respectively.
 
 ### Enemy Objects
@@ -23,7 +23,7 @@ In addition, it includes a draw and an update function, to draw the chracater on
 Enemy Objects are structured in a parent Enemy class and various sub-classes.
 The only purpose of the parent class is holding hitbox information, to allow for uniform collision detection with the player.
 
-Each sub-class defines their own draw and update function and their necessary properties.
+Each sub-class defines their own draw and update functions and their necessary properties.
 
 ### LevelManager Object
 
@@ -41,11 +41,12 @@ The Game Loop is the centerpiece, making the program run. It consists of 4 steps
 ### Input Handling
 
 The Input is received through the HTML onmousemove event. Each time this event is triggered, the mouse x- and y-position are updated in the mousePos variable.
-This variable is the used by the player and other objects in their update function to calculate their trajectory.
+This variable is then used by the player and other objects in their update function to calculate their trajectory.
 
 ### Graph
 
 The Graph was implemeted using the open source chart.js library. (https://www.chartjs.org)
+
 Every 0.25 seconds a new data point is tracked. The graph displays the last 10 seconds of this data.
 
 
@@ -54,8 +55,8 @@ Every 0.25 seconds a new data point is tracked. The graph displays the last 10 s
 ## Future Work
 
 Short Term:
-- Add Sprites and Sound
-- Make the Surrounding Website prettier
+- Add Sprites, Animations and Sound
+- Make the surrounding website prettier
 - Add more levels
 
 
