@@ -22,9 +22,11 @@ let win = false;
 let player;
 let levelManager;
 let enemies = new Set();
+let score = 0;
+let scoreElement;
 
 
-let mousePos = {x:0,y:0}
+let mousePos = {x:boardWidth/2,y:boardHeight/2}
 
 window.onload = function() {
 
@@ -32,6 +34,8 @@ window.onload = function() {
     board.height = boardHeight;
     board.width = boardWidth;
     context = board.getContext("2d");
+    scoreElement = document.getElementById("score");
+
     
 
 
@@ -55,6 +59,8 @@ function startLevel(timestamp){
     lastTimestamp = timestamp;
     gameOver = false;
     win = false;
+    score = 0;
+    scoreElement.textContent = "Score: " + score.toString();
     requestAnimationFrame(gameLoop);
 }
 
@@ -82,6 +88,8 @@ function update(){
     for(let e of enemies.values()){
         e.update();
     }
+    score+=deltaTime/10;
+    scoreElement.textContent = "Score: " + Math.round(score).toString();
 }
 
 function draw(){
@@ -244,6 +252,7 @@ class BounceEnemy extends Enemy{
 
         if(this.bounces > this.maxBounce){
             enemies.delete(this);
+            score+=5;
         }
 
     }
@@ -291,10 +300,12 @@ class RotatingEnemy extends Enemy {
         if(this.biasY>0){
             if(this.y>boardHeight){
                 enemies.delete(this);
+                score+= 10;
             }
         } else if(this.biasY<0){
             if(this.y<0){
                 enemies.delete(this);
+                score+= 10;
             }
         }
 
@@ -305,7 +316,7 @@ class RotatingEnemy extends Enemy {
 class MouseBoundEnemy extends Enemy{
     constructor(x, y){
         super(x, y, 20, 20);
-        this.speed = 3;
+        this.speed = 2.5;
     }
 
     draw(){
@@ -314,7 +325,7 @@ class MouseBoundEnemy extends Enemy{
     }
 
     update(){
-       
+        score +=deltaTime/20;
         let dX = mousePos.x - this.x-(this.width/2);
         let dY = mousePos.y - this.y-(this.height/2);
 
@@ -362,6 +373,7 @@ class Laser extends Enemy{
         }
         if(timeElapsed> this.chargeTime + this.activeTime){
             enemies.delete(this);
+            score+=1;
         }
     }
 
@@ -410,7 +422,7 @@ class LevelManager{
 
     update(){
         
-        if(this.startTime==-1 || this.currentObject == undefined){return;}
+        if(this.startTime==-1){return;}
         let timeElapsed = (Date.now() - this.startTime)/1000;
 
         if(timeElapsed > this.levelLength){
@@ -418,6 +430,8 @@ class LevelManager{
             win=true;
             return;
         }
+
+        if(this.currentObject == undefined){return;}
         
         while(this.currentObject.t <= timeElapsed){
             enemies.add(this.currentObject.obj);

@@ -58,6 +58,7 @@ Every 0.25 seconds a new data point is tracked. The graph displays the last 10 s
 Short Term:
 - Add Sprites, Animations and Sound
 - Make the surrounding website prettier
+- Adjust Difficulty
 - Add more levels
 
 

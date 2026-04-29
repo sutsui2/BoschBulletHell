@@ -3,6 +3,7 @@ body{
 }
 
 
+
 #board{
     background-color: gray;
 }
@@ -21,4 +22,12 @@ body{
     position: fixed;
     top: 20%;
     right: 30px;
+}
+
+#score{
+    font-size: 32px;
+    font-style: sans-serif;
+    position: relative;
+   
+    left: 550px;
 }
