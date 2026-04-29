@@ -2,6 +2,7 @@
 
 ## Game Instructions
 
+- Start the game by opening the index.html file in your browser
 - The yellow rectangle is your Player Element
 - Control the player, by moving the mouse over the Game Window
 - All other elements are enemies, that will kill you on touch. So try your best to avoid them
