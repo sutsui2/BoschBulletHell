@@ -1,0 +1,24 @@
+body{
+    text-align: left;
+}
+
+
+#board{
+    background-color: gray;
+}
+
+#chartX{
+    background-color: darkgray;
+    text-align: center;
+}
+
+#chart-container {
+    height: 250px;
+    width: 300px;
+    background-color: white;
+    
+    
+    position: fixed;
+    top: 20%;
+    right: 30px;
+}
