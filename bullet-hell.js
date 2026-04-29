@@ -18,6 +18,7 @@ const perfectFrameTime = 1000 / 60;
 let deltaTime = 0;
 let lastTimestamp = 0;
 let gameOver = false;
+let win = false;
 let player;
 let levelManager;
 let enemies = new Set();
@@ -53,6 +54,7 @@ function startLevel(timestamp){
     levelManager.startLevel();
     lastTimestamp = timestamp;
     gameOver = false;
+    win = false;
     requestAnimationFrame(gameLoop);
 }
 
@@ -91,11 +93,20 @@ function draw(){
 }
 
 function onGameOver(){
-    context.fillStyle = "black";
-    context.font = "38px sans-serif";
-    context.fillText("Game Over", boardWidth/2-80, boardHeight/2);
-    context.font = "20px sans-serif";
-    context.fillText("Press Space To Continue", boardWidth/2-100, boardHeight/2 + 40);
+    if(win){
+        context.fillStyle = "gold";
+        context.font = "38px sans-serif";
+        context.fillText("You Win!", boardWidth/2-80, boardHeight/2);
+        context.font = "20px sans-serif";
+        context.fillText("Press Space To Continue", boardWidth/2-110, boardHeight/2 + 40);
+    } else {
+        context.fillStyle = "black";
+        context.font = "38px sans-serif";
+        context.fillText("Game Over", boardWidth/2-80, boardHeight/2);
+        context.font = "20px sans-serif";
+        context.fillText("Press Space To Continue", boardWidth/2-100, boardHeight/2 + 40);
+    }
+    
 
 }
 
@@ -383,6 +394,7 @@ function normalizeVector(x, y){
 class LevelManager{
     constructor(){
         this.startTime = -1;
+        this.levelLength = 104;
         this.iterator;
         this.currentObject;
         this.levelList = new Set();
@@ -400,6 +412,12 @@ class LevelManager{
         
         if(this.startTime==-1 || this.currentObject == undefined){return;}
         let timeElapsed = (Date.now() - this.startTime)/1000;
+
+        if(timeElapsed > this.levelLength){
+            gameOver=true;
+            win=true;
+            return;
+        }
         
         while(this.currentObject.t <= timeElapsed){
             enemies.add(this.currentObject.obj);
