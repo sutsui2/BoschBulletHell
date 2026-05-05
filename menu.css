@@ -1,0 +1,11 @@
+body{
+    background-image: url('images/menu-bg.jpg');
+    background-size: cover;
+}
+
+
+.menu-button{
+    font-size: 40px;
+    color: rgba(228, 41, 41, 1);
+    background-color: white;
+}
