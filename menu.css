@@ -3,9 +3,40 @@ body{
     background-size: cover;
 }
 
+.button-wrap{
+    
+    position: relative;
+    
+
+    
+}
 
 .menu-button{
-    font-size: 40px;
-    color: rgba(228, 41, 41, 1);
-    background-color: white;
+    position: absolute;
+    left: 10%;
+    top: 100px;
+    background-color: rgba(0,0,0,0);
+    transition-duration: 0.4s;
+    border: 0cm;
+    
 }
+
+.menu-button:hover{
+    background-color: rgba(200, 200, 200, 200);
+}
+
+.button-text{
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    padding-left: 15px;
+    padding-right: 60px;
+}
+
+.button-triangle{
+    height: 40px;
+    
+    
+    right: 0px;
+}
+
