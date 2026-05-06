@@ -4,10 +4,12 @@ body{
 }
 
 .button-wrap{
-    
     position: relative;
-    
-
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    padding: 10px;
+    padding-right: 0px;
+    justify-content: center;
     
 }
 
@@ -27,16 +29,19 @@ body{
 
 .button-text{
     font-size: 40px;
+    
     color: rgb(0, 0, 0);
-    padding: 10px;
-    padding-left: 15px;
-    padding-right: 60px;
+    
 }
 
 .button-triangle{
+    position: absolute;
     height: 40px;
+    top: 20%;
     
     
-    right: 0px;
+    
+    
 }
+
 
