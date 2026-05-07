@@ -448,8 +448,8 @@ class LevelManager{
 
     loadLevelList1(){
         this.levelList.clear();
-
-
+        let level=3;
+        if(level==1){
         
         this.levelList.add({t:1, obj:new BounceEnemy(100, 100, 0, 0)});
         this.levelList.add({t:1, obj:new BounceEnemy(boardWidth-100, 100, 0, 0)});
@@ -563,11 +563,244 @@ class LevelManager{
         this.levelList.add({t:100, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
         this.levelList.add({t:101, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
         this.levelList.add({t:101, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+        }
+
+        else if(level==2){
+            this.levelList.add({t:1, obj:new BounceEnemy(120, 120, 0, 0)});
+            this.levelList.add({t:1, obj:new BounceEnemy(boardWidth-120, 120, 0, 0)});
+
+            this.levelList.add({t:4, obj:new HorizontalLaser(150)});
+            this.levelList.add({t:4.5, obj:new HorizontalLaser(boardHeight-150)});
+
+            this.levelList.add({t:7, obj:new VerticalLaser(200)});
+            this.levelList.add({t:7.5, obj:new VerticalLaser(boardWidth-200)});
+
+            this.levelList.add({t:10, obj:new RotatingEnemy(-120, boardHeight/2, 0.28, 0.05, 0)});
+            this.levelList.add({t:10, obj:new RotatingEnemy(boardWidth+120, boardHeight/2, -0.28, -0.05, 1)});
+
+            this.levelList.add({t:14, obj:new BounceEnemy(boardWidth/2, 100, 0, 0)});
+            this.levelList.add({t:14, obj:new BounceEnemy(boardWidth/2, boardHeight-100, 0, 0)});
+
+            this.levelList.add({t:18, obj:new HorizontalLaser(100)});
+            this.levelList.add({t:18.25, obj:new HorizontalLaser(220)});
+            this.levelList.add({t:18.5, obj:new HorizontalLaser(340)});
+            this.levelList.add({t:18.75, obj:new HorizontalLaser(460)});
+            this.levelList.add({t:19, obj:new HorizontalLaser(580)});
+
+            this.levelList.add({t:23, obj:new VerticalLaser(120)});
+            this.levelList.add({t:23.25, obj:new VerticalLaser(320)});
+            this.levelList.add({t:23.5, obj:new VerticalLaser(520)});
+            this.levelList.add({t:23.75, obj:new VerticalLaser(720)});
+            this.levelList.add({t:24, obj:new VerticalLaser(920)});
+
+            this.levelList.add({t:28, obj:new BounceEnemy(100, boardHeight-100, 0, 0)});
+            this.levelList.add({t:28, obj:new BounceEnemy(boardWidth-100, 100, 0, 0)});
+
+            this.levelList.add({t:31, obj:new RotatingEnemy(boardWidth/2, -100, 0, 0.3, 0)});
+            this.levelList.add({t:31.5, obj:new RotatingEnemy(boardWidth/2, boardHeight+100, 0, -0.3, 1)});
+
+            this.levelList.add({t:36, obj:new HorizontalLaser(80)});
+            this.levelList.add({t:36, obj:new HorizontalLaser(boardHeight-80)});
+            this.levelList.add({t:36, obj:new VerticalLaser(80)});
+            this.levelList.add({t:36, obj:new VerticalLaser(boardWidth-80)});
+
+            this.levelList.add({t:40, obj:new BounceEnemy(180, 180, 0, 0)});
+            this.levelList.add({t:40, obj:new BounceEnemy(boardWidth-180, 180, 0, 0)});
+            this.levelList.add({t:40, obj:new BounceEnemy(180, boardHeight-180, 0, 0)});
+            this.levelList.add({t:40, obj:new BounceEnemy(boardWidth-180, boardHeight-180, 0, 0)});
+
+            this.levelList.add({t:46, obj:new HorizontalLaser(150)});
+            this.levelList.add({t:46, obj:new HorizontalLaser(300)});
+            this.levelList.add({t:46, obj:new HorizontalLaser(450)});
+
+            this.levelList.add({t:47.5, obj:new VerticalLaser(250)});
+            this.levelList.add({t:47.5, obj:new VerticalLaser(500)});
+            this.levelList.add({t:47.5, obj:new VerticalLaser(750)});
+
+            this.levelList.add({t:50, obj:new RotatingEnemy(-120, 100, 0.32, 0.08, 0)});
+            this.levelList.add({t:50, obj:new RotatingEnemy(boardWidth+120, boardHeight-100, -0.32, -0.08, 1)});
+
+            this.levelList.add({t:55, obj:new HorizontalLaser(50)});
+            this.levelList.add({t:55.2, obj:new HorizontalLaser(170)});
+            this.levelList.add({t:55.4, obj:new HorizontalLaser(290)});
+            this.levelList.add({t:55.6, obj:new HorizontalLaser(410)});
+            this.levelList.add({t:55.8, obj:new HorizontalLaser(530)});
+
+            this.levelList.add({t:59, obj:new VerticalLaser(100)});
+            this.levelList.add({t:59.2, obj:new VerticalLaser(280)});
+            this.levelList.add({t:59.4, obj:new VerticalLaser(460)});
+            this.levelList.add({t:59.6, obj:new VerticalLaser(640)});
+            this.levelList.add({t:59.8, obj:new VerticalLaser(820)});
+            this.levelList.add({t:60, obj:new VerticalLaser(1000)});
+
+            this.levelList.add({t:64, obj:new BounceEnemy(boardWidth/2, boardHeight/2, 0, 0)});
+
+            this.levelList.add({t:66, obj:new HorizontalLaser(120)});
+            this.levelList.add({t:66, obj:new HorizontalLaser(boardHeight-120)});
+            this.levelList.add({t:66.5, obj:new VerticalLaser(220)});
+            this.levelList.add({t:66.5, obj:new VerticalLaser(boardWidth-220)});
+
+            this.levelList.add({t:70, obj:new RotatingEnemy(-100, boardHeight/2, 0.35, 0.02, 0)});
+            this.levelList.add({t:70.5, obj:new RotatingEnemy(boardWidth+100, boardHeight/2, -0.35, -0.02, 1)});
+            this.levelList.add({t:71, obj:new RotatingEnemy(boardWidth/2, -100, 0.02, 0.35, 0)});
+            this.levelList.add({t:71.5, obj:new RotatingEnemy(boardWidth/2, boardHeight+100, -0.02, -0.35, 1)});
+
+            this.levelList.add({t:76, obj:new HorizontalLaser(40)});
+            this.levelList.add({t:76, obj:new HorizontalLaser(140)});
+            this.levelList.add({t:76, obj:new HorizontalLaser(240)});
+            this.levelList.add({t:76, obj:new HorizontalLaser(340)});
+            this.levelList.add({t:76, obj:new HorizontalLaser(440)});
+            this.levelList.add({t:76, obj:new HorizontalLaser(540)});
+
+            this.levelList.add({t:79, obj:new VerticalLaser(150)});
+            this.levelList.add({t:79.25, obj:new VerticalLaser(350)});
+            this.levelList.add({t:79.5, obj:new VerticalLaser(550)});
+            this.levelList.add({t:79.75, obj:new VerticalLaser(750)});
+            this.levelList.add({t:80, obj:new VerticalLaser(950)});
+
+            this.levelList.add({t:84, obj:new BounceEnemy(100, 100, 0, 0)});
+            this.levelList.add({t:84, obj:new BounceEnemy(boardWidth-100, 100, 0, 0)});
+            this.levelList.add({t:84, obj:new BounceEnemy(100, boardHeight-100, 0, 0)});
+            this.levelList.add({t:84, obj:new BounceEnemy(boardWidth-100, boardHeight-100, 0, 0)});
+
+            this.levelList.add({t:88, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:88, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:89, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:89, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:90, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:90, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:91, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:91, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:92, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:92, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:93, obj:new RotatingEnemy(-100, 50, 0.4, 0.1, 0)});
+            this.levelList.add({t:93, obj:new RotatingEnemy(boardWidth+100, boardHeight-50, -0.4, -0.1, 1)});
+
+            this.levelList.add({t:94, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:94, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+            this.levelList.add({t:95, obj:new VerticalLaser(Math.random()*(boardWidth-40))});
+            this.levelList.add({t:95, obj:new HorizontalLaser(Math.random()*(boardHeight-40))});
+
+        }
         
-        
-        
-       
-        
+        else if(level==3){
+            this.levelList.add({t:1, obj:new BounceEnemy(150, 120, 0, 0)});
+this.levelList.add({t:1, obj:new BounceEnemy(boardWidth-150, 120, 0, 0)});
+
+this.levelList.add({t:4, obj:new HorizontalLaser(120)});
+this.levelList.add({t:4, obj:new HorizontalLaser(boardHeight-120)});
+
+this.levelList.add({t:7, obj:new VerticalLaser(180)});
+this.levelList.add({t:7, obj:new VerticalLaser(boardWidth-180)});
+
+this.levelList.add({t:10, obj:new RotatingEnemy(-100, 120, 0.26, 0.08, 0)});
+this.levelList.add({t:10, obj:new RotatingEnemy(boardWidth+100, 120, -0.26, 0.08, 1)});
+
+this.levelList.add({t:14, obj:new BounceEnemy(220, boardHeight-140, 0, 0)});
+this.levelList.add({t:14, obj:new BounceEnemy(boardWidth-220, boardHeight-140, 0, 0)});
+
+this.levelList.add({t:18, obj:new HorizontalLaser(180)});
+this.levelList.add({t:18, obj:new HorizontalLaser(boardHeight-180)});
+this.levelList.add({t:18.5, obj:new HorizontalLaser(300)});
+this.levelList.add({t:18.5, obj:new HorizontalLaser(boardHeight-300)});
+
+this.levelList.add({t:22, obj:new VerticalLaser(250)});
+this.levelList.add({t:22, obj:new VerticalLaser(boardWidth-250)});
+this.levelList.add({t:22.5, obj:new VerticalLaser(450)});
+this.levelList.add({t:22.5, obj:new VerticalLaser(boardWidth-450)});
+
+this.levelList.add({t:26, obj:new RotatingEnemy(150, -100, 0.08, 0.30, 0)});
+this.levelList.add({t:26, obj:new RotatingEnemy(boardWidth-150, -100, -0.08, 0.30, 1)});
+
+this.levelList.add({t:30, obj:new BounceEnemy(boardWidth/2-180, boardHeight/2, 0, 0)});
+this.levelList.add({t:30, obj:new BounceEnemy(boardWidth/2+180, boardHeight/2, 0, 0)});
+
+this.levelList.add({t:34, obj:new HorizontalLaser(100)});
+this.levelList.add({t:34, obj:new HorizontalLaser(boardHeight-100)});
+this.levelList.add({t:34, obj:new VerticalLaser(100)});
+this.levelList.add({t:34, obj:new VerticalLaser(boardWidth-100)});
+
+this.levelList.add({t:38, obj:new RotatingEnemy(-120, boardHeight/2-120, 0.34, 0.04, 0)});
+this.levelList.add({t:38, obj:new RotatingEnemy(boardWidth+120, boardHeight/2-120, -0.34, 0.04, 1)});
+
+this.levelList.add({t:42, obj:new HorizontalLaser(140)});
+this.levelList.add({t:42, obj:new HorizontalLaser(boardHeight-140)});
+this.levelList.add({t:42.25, obj:new HorizontalLaser(240)});
+this.levelList.add({t:42.25, obj:new HorizontalLaser(boardHeight-240)});
+this.levelList.add({t:42.5, obj:new HorizontalLaser(340)});
+this.levelList.add({t:42.5, obj:new HorizontalLaser(boardHeight-340)});
+
+this.levelList.add({t:47, obj:new VerticalLaser(160)});
+this.levelList.add({t:47, obj:new VerticalLaser(boardWidth-160)});
+this.levelList.add({t:47.25, obj:new VerticalLaser(320)});
+this.levelList.add({t:47.25, obj:new VerticalLaser(boardWidth-320)});
+this.levelList.add({t:47.5, obj:new VerticalLaser(480)});
+this.levelList.add({t:47.5, obj:new VerticalLaser(boardWidth-480)});
+
+this.levelList.add({t:52, obj:new BounceEnemy(120, 120, 0, 0)});
+this.levelList.add({t:52, obj:new BounceEnemy(boardWidth-120, 120, 0, 0)});
+this.levelList.add({t:52, obj:new BounceEnemy(120, boardHeight-120, 0, 0)});
+this.levelList.add({t:52, obj:new BounceEnemy(boardWidth-120, boardHeight-120, 0, 0)});
+
+this.levelList.add({t:57, obj:new RotatingEnemy(boardWidth/2-220, -100, 0.10, 0.34, 0)});
+this.levelList.add({t:57, obj:new RotatingEnemy(boardWidth/2+220, -100, -0.10, 0.34, 1)});
+
+this.levelList.add({t:62, obj:new HorizontalLaser(80)});
+this.levelList.add({t:62, obj:new HorizontalLaser(boardHeight-80)});
+this.levelList.add({t:62, obj:new HorizontalLaser(200)});
+this.levelList.add({t:62, obj:new HorizontalLaser(boardHeight-200)});
+this.levelList.add({t:62, obj:new HorizontalLaser(320)});
+this.levelList.add({t:62, obj:new HorizontalLaser(boardHeight-320)});
+
+this.levelList.add({t:67, obj:new VerticalLaser(120)});
+this.levelList.add({t:67, obj:new VerticalLaser(boardWidth-120)});
+this.levelList.add({t:67, obj:new VerticalLaser(280)});
+this.levelList.add({t:67, obj:new VerticalLaser(boardWidth-280)});
+this.levelList.add({t:67, obj:new VerticalLaser(440)});
+this.levelList.add({t:67, obj:new VerticalLaser(boardWidth-440)});
+
+this.levelList.add({t:72, obj:new RotatingEnemy(-100, 80, 0.42, 0.12, 0)});
+this.levelList.add({t:72, obj:new RotatingEnemy(boardWidth+100, 80, -0.42, 0.12, 1)});
+this.levelList.add({t:72.5, obj:new RotatingEnemy(-100, boardHeight-80, 0.42, -0.12, 0)});
+this.levelList.add({t:72.5, obj:new RotatingEnemy(boardWidth+100, boardHeight-80, -0.42, -0.12, 1)});
+
+this.levelList.add({t:78, obj:new HorizontalLaser(60)});
+this.levelList.add({t:78, obj:new HorizontalLaser(boardHeight-60)});
+this.levelList.add({t:78.2, obj:new HorizontalLaser(160)});
+this.levelList.add({t:78.2, obj:new HorizontalLaser(boardHeight-160)});
+this.levelList.add({t:78.4, obj:new HorizontalLaser(260)});
+this.levelList.add({t:78.4, obj:new HorizontalLaser(boardHeight-260)});
+this.levelList.add({t:78.6, obj:new HorizontalLaser(360)});
+this.levelList.add({t:78.6, obj:new HorizontalLaser(boardHeight-360)});
+
+this.levelList.add({t:84, obj:new VerticalLaser(100)});
+this.levelList.add({t:84, obj:new VerticalLaser(boardWidth-100)});
+this.levelList.add({t:84.2, obj:new VerticalLaser(220)});
+this.levelList.add({t:84.2, obj:new VerticalLaser(boardWidth-220)});
+this.levelList.add({t:84.4, obj:new VerticalLaser(340)});
+this.levelList.add({t:84.4, obj:new VerticalLaser(boardWidth-340)});
+this.levelList.add({t:84.6, obj:new VerticalLaser(460)});
+this.levelList.add({t:84.6, obj:new VerticalLaser(boardWidth-460)});
+
+this.levelList.add({t:90, obj:new BounceEnemy(boardWidth/2-250, boardHeight/2-150, 0, 0)});
+this.levelList.add({t:90, obj:new BounceEnemy(boardWidth/2+250, boardHeight/2-150, 0, 0)});
+this.levelList.add({t:90, obj:new BounceEnemy(boardWidth/2-250, boardHeight/2+150, 0, 0)});
+this.levelList.add({t:90, obj:new BounceEnemy(boardWidth/2+250, boardHeight/2+150, 0, 0)});
+
+this.levelList.add({t:95, obj:new HorizontalLaser(boardHeight/2-80)});
+this.levelList.add({t:95, obj:new HorizontalLaser(boardHeight/2+80)});
+this.levelList.add({t:95, obj:new VerticalLaser(boardWidth/2-180)});
+this.levelList.add({t:95, obj:new VerticalLaser(boardWidth/2+180)});
+
+this.levelList.add({t:100, obj:new RotatingEnemy(-120, boardHeight/2, 0.5, 0, 0)});
+this.levelList.add({t:100, obj:new RotatingEnemy(boardWidth+120, boardHeight/2, -0.5, 0, 1)});
+        }
         
     }
 
